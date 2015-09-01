@@ -81,7 +81,7 @@ case $type in
       exit 1
     fi
     FALCONCPPATH="$FALCON_CONF" 
-    HADOOPDIR=`which hadoop`
+    HADOOPDIR="" #`which hadoop` (ignore-hadoop for standalone falcon)
     if [ "$HADOOP_HOME" != "" ]; then
       echo "Hadoop home is set, adding libraries from '${HADOOP_HOME}/bin/hadoop classpath' into falcon classpath"
       FALCONCPPATH="${FALCONCPPATH}:`${HADOOP_HOME}/bin/hadoop classpath`"
